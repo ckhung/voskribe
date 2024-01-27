@@ -1,27 +1,25 @@
 # Sharetape-Speech-To-Text
 
-Run speech to text for video for free. This outputs 3 files, 1 `words.json` file that has all of the words said along with their timing and confidence, 1 `transcript.txt` with just all the words read, and 1 `captions.srt` file which is the captions for that video.
+Create text transcription for a video or audio file. This outputs 3 files, 1 `words.json` file that has all of the words said along with their timing and confidence, 1 `transcript.txt` with just all the words read, and 1 `captions.srt` file which is the captions for that video.
+
+This is a fork of [adhikary97/Sharetape-Speech-To-Text](https://github.com/adhikary97/Sharetape-Speech-To-Text).
 
 ## Install requirements
 
 ```
-$ python3 -m venv venv
-$ source venv/bin/activate
-$ pip install -r requirements.txt
+$ pip3 install moviepy vosk
 ```
 
-## Download Vosk Library
+## Download Vosk models
 
-This is the language library this speech to text uses. Download this [Here](https://alphacephei.com/vosk/models/vosk-model-en-us-0.42-gigaspeech.zip)
-
-Once downloaded unzip in your project directory.
+Choose language models from [vosk model page](https://alphacephei.com/vosk/models) and unzip them in ~/vosk/ or any directory to your liking. You can use the -m option to specify the exact path of the language model at runtime.
 
 ## Speech to text with video
 
 Video must be `.mp4` or `.mov`
 
 ```
-$ python main.py --video videoname.mp4
+$ python main.py videoname.mp4
 ```
 
 ## Speech to text with audio
@@ -29,5 +27,5 @@ $ python main.py --video videoname.mp4
 Video must be `.wav`
 
 ```
-$ python main.py --audio audioname.wav
+$ python main.py audioname.wav
 ```
